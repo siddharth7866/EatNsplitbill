@@ -40,7 +40,9 @@ export default function App() {
       <div className="sidebar">
         <FireindsList />
         {showAddfrnd && <FormAddfriend />}
-        <Button onClick={HandleShowfrnd}>Add Friend</Button>
+        <Button onClick={HandleShowfrnd}>
+          {showAddfrnd ? "Close" : "Add Friend"}
+        </Button>
       </div>
       <FormSplitBill />
     </div>
@@ -59,6 +61,10 @@ function FireindsList() {
 }
 
 function Friend({ friend }) {
+  // const [showform, setshowform] = useState(false);
+  // function handleform() {
+  //   setshowform((show) => !show);
+  // }
   return (
     <li>
       <img src={friend.image} alt={friend.name} />
